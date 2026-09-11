@@ -36,9 +36,13 @@ export default function YourStack({
         <div className="flex flex-col gap-5 border border-gray-300 p-5 rounded-xl">
             <div>
                 <h3 className="text-2xl font-bold">Your Stack</h3>
-                <p className="text-[#94A3B8]">{addedTechonlogi.length} Technology Selected</p>
+                <p className="text-[#94A3B8]">{addedTechonlogi.length === 0 ? "No technologies selected yet." : `${addedTechonlogi.length} technologi selected.`}</p>
             </div>
             {
+                addedTechonlogi.length === 0 ? 
+                <div>
+                    <p className="text-[#94A3B8] text-center border border-dashed border-gray-300 py-10 rounded-lg">Your stack is empty.</p>
+                </div> :
                 addedTechonlogi.map(techonlogi => <YourStackCard 
                     key={techonlogi.id}
                     techonlogi={techonlogi}
