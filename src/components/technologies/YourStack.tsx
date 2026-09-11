@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { TechonlogiesType } from "../type/Type";
-import { RxCross2 } from "react-icons/rx";
+import YourStackCard from "./card/YourStackCard";
 
 
 export interface YourStackProps {
@@ -8,9 +8,13 @@ export interface YourStackProps {
     setAddedTechonlogi: Dispatch<SetStateAction<TechonlogiesType[]>>
 }
 
-export default function YourStack({addedTechonlogi, setAddedTechonlogi}: YourStackProps) {
+export default function YourStack({
+    addedTechonlogi, 
+    setAddedTechonlogi
+    }: YourStackProps) {
 
     
+
 
     return (
         <>
@@ -21,25 +25,14 @@ export default function YourStack({addedTechonlogi, setAddedTechonlogi}: YourSta
                 <p className="text-[#94A3B8]">{addedTechonlogi.length} Technology Selected</p>
             </div>
             {
-                addedTechonlogi.map(addedTec => {
-                    return (
-                        <div>
-                            <div className="container mx-auto items-center flex            justify-between border border-gray-300 px-4 py-2 rounded-lg">
-                                <div className="flex gap-4">
-                                    <img src={addedTec.icon} alt="" className="h-10 w-10" />
-                                    <div>
-                                        <p className="text-lg font-bold">{addedTec.name}</p>
-                                        <p className="text-sm">{addedTec.category}</p>
-                                    </div>
-                                </div>
-                                <span className="text-lg text-red-500 cursor-pointer"><RxCross2 /></span>
-                            </div>
-                        </div>
-                    )
-                })
+                addedTechonlogi.map(techonlogi => <YourStackCard 
+                    techonlogi={techonlogi}
+                    addedTechonlogi={addedTechonlogi}
+                    setAddedTechonlogi={setAddedTechonlogi}
+                    ></YourStackCard>)
             }
 
-            <button className="border border-pink-300 text-red-500 py-1.5 rounded-md cursor-pointer mt-8 font-semibold hover:bg-pink-100">Remove All</button>
+            <button  className="border border-pink-300 text-red-500 py-1.5 rounded-md cursor-pointer mt-8 font-semibold hover:bg-pink-100">Remove All</button>
         </div>
         
         </>

@@ -1,6 +1,6 @@
 import { GoStarFill } from "react-icons/go";
 import type { TechonlogiesType } from "../../type/Type"
-import { useState, type Dispatch, type SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import { Bounce, toast } from "react-toastify";
 
 export interface TechnologiCardProps {
@@ -14,11 +14,15 @@ export default function TechnologiCard({
     addedTechonlogi,
     setAddedTechonlogi
     }: TechnologiCardProps) {
-    
-    const [isAddedInStack, setIsAddedInStack] = useState(false);
+
+    const isAddedInStack = addedTechonlogi.some(item => item.id === techonlogi.id);
 
     const handleAddToStack = () => {
-        setIsAddedInStack(true);
+
+        if(isAddedInStack){
+            return;
+        }
+
         toast.success(`${techonlogi.name} has been added to your stack.`, {
             position: "bottom-right",
             autoClose: 5000,
