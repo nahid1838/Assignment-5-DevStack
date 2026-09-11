@@ -1,12 +1,38 @@
 import { GoStarFill } from "react-icons/go";
 import type { TechonlogiesType } from "../../type/Type"
+import { useState, type Dispatch, type SetStateAction } from "react";
+import { Bounce, toast } from "react-toastify";
 
 export interface TechnologiCardProps {
     techonlogi: TechonlogiesType;
+    addedTechonlogi: TechonlogiesType[];
+    setAddedTechonlogi: Dispatch<SetStateAction<TechonlogiesType[]>>
 }
 
-export default function TechnologiCard({ techonlogi }: TechnologiCardProps) {
-    console.log(techonlogi)
+export default function TechnologiCard({ 
+    techonlogi,
+    addedTechonlogi,
+    setAddedTechonlogi
+    }: TechnologiCardProps) {
+    
+    const [isAddedInStack, setIsAddedInStack] = useState(false);
+
+    const handleAddToStack = () => {
+        setIsAddedInStack(true);
+        toast.success(`${techonlogi.name} has been added to your stack.`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+            });
+
+        setAddedTechonlogi([...addedTechonlogi, techonlogi]);
+    }
     
     return (
         <>
@@ -26,7 +52,9 @@ export default function TechnologiCard({ techonlogi }: TechnologiCardProps) {
                 <span className="flex items-center gap-1 font-semibold"> <GoStarFill className="text-[#FBBF24]" /> {techonlogi.rating}</span>
             </div>
 
-            <button className="bg-[#0A0F1D] text-white py-2 rounded-lg cursor-pointer">Add To Stack</button>
+            <button onClick={()=> handleAddToStack()} 
+            className={`${isAddedInStack === true ? "bg-pink-100 text-red-500 cursor-not-allowed" : "bg-[#0A0F1D] text-white cursor-pointer"} font-semibold py-2 rounded-lg`}>{isAddedInStack === true ? "✓  Add To Stack" : "Add To Stack"}
+            </button>
          </div>
         
         </>

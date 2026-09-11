@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { TechonlogiesType } from "../type/Type"
 import Techonlogi from "./Techonlogi";
 import YourStack from "./YourStack";
@@ -10,8 +10,8 @@ export interface TechnologiesProps {
 export default function Technologies({ technologiesDataPromise }: TechnologiesProps) {
 
     const techonlogies = use(technologiesDataPromise);
+    const [addedTechonlogi, setAddedTechonlogi] = useState<TechonlogiesType[]>([])
 
-    console.log(techonlogies)
     
     return (
         <>
@@ -22,13 +22,18 @@ export default function Technologies({ technologiesDataPromise }: TechnologiesPr
                     techonlogies.map(techonlogi => <Techonlogi
                         key={techonlogi.id} 
                         techonlogi={techonlogi}
+                        addedTechonlogi={addedTechonlogi}
+                        setAddedTechonlogi={setAddedTechonlogi}
                         ></Techonlogi>)
                     }
                 </div>
             </div>
 
             <div className="col-span-3">
-                <YourStack></YourStack>
+                <YourStack
+                addedTechonlogi={addedTechonlogi}
+                setAddedTechonlogi={setAddedTechonlogi}
+                ></YourStack>
             </div>
         </div>
         
