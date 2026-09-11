@@ -3,7 +3,7 @@ import NavLogo from "../assets/logo-text.png"
 export default function Nav() {
     return (
         <>
-        <div className="sticky top-0 z-0 bg-[#F1F5F9]">
+        <div className="sticky top-0 z-0 bg-white">
             <div className="container mx-auto flex justify-between items-center py-5">
                 <img src={NavLogo} alt="" className="h-8 w-auto" />
 

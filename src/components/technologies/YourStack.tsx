@@ -3,7 +3,7 @@ export default function YourStack() {
         <>
         
         <div>
-            <h3>Your Stack</h3>
+            <h3 className="text-2xl font-bold">Your Stack</h3>
         </div>
         
         </>

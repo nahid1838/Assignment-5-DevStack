@@ -15,7 +15,7 @@ export default function Technologies({ technologiesDataPromise }: TechnologiesPr
     
     return (
         <>
-        <div className="container mx-auto grid grid-cols-12 gap-5">
+        <div className="container mx-auto grid grid-cols-12 gap-5 pt-5 pb-15">
             <div className=" grid col-span-9">
                 <div className="grid grid-cols-3 gap-5">
                     {
