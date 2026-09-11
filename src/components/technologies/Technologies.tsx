@@ -15,7 +15,7 @@ export default function Technologies({ technologiesDataPromise }: TechnologiesPr
     return (
         <>
         
-            <div>
+            <div className="container mx-auto grid grid-cols-3 gap-5">
                 {
                     techonlogies.map(techonlogi => <Techonlogi
                         key={techonlogi.id} 

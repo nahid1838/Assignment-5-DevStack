@@ -1,4 +1,5 @@
 import type { TechonlogiesType } from "../type/Type"
+import TechnologiCard from "./card/TechnologiCard";
 
 export interface TechonlogiProps {
     techonlogi: TechonlogiesType;
@@ -6,12 +7,15 @@ export interface TechonlogiProps {
 
 export default function Techonlogi({ techonlogi }: TechonlogiProps) {
 
-    console.log(techonlogi)
     
     return (
         <>
         
-        
+        <div>
+
+            <TechnologiCard techonlogi={techonlogi}></TechnologiCard>
+
+        </div>
         
         </>
     )
