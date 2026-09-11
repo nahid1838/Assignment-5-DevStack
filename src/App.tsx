@@ -1,5 +1,15 @@
+import { Suspense } from "react";
 import Hero from "./components/Hero"
 import Nav from "./components/Nav"
+import Technologies from "./components/technologies/Technologies";
+
+
+const technologiesDataPromise = async() => {
+  const res = await fetch("/data.json");
+  const data = await res.json();
+  return data;
+}
+
 
 function App() {
 
@@ -9,6 +19,10 @@ function App() {
       <Nav></Nav>
 
       <Hero></Hero>
+
+      <Suspense fallback={<h3>Loading....</h3>}>
+        <Technologies technologiesDataPromise={technologiesDataPromise()}></Technologies>
+      </Suspense>
 
     </>
   )
