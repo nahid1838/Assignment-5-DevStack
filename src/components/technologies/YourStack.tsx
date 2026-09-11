@@ -40,6 +40,7 @@ export default function YourStack({
             </div>
             {
                 addedTechonlogi.map(techonlogi => <YourStackCard 
+                    key={techonlogi.id}
                     techonlogi={techonlogi}
                     addedTechonlogi={addedTechonlogi}
                     setAddedTechonlogi={setAddedTechonlogi}

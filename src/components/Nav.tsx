@@ -1,3 +1,4 @@
+import { RxHamburgerMenu } from "react-icons/rx"
 import NavLogo from "../assets/logo-text.png"
 
 export default function Nav() {
@@ -5,9 +6,10 @@ export default function Nav() {
         <>
         <div className="sticky top-0 z-0 bg-white">
             <div className="container mx-auto flex justify-between items-center py-5">
+                <span className=" visible md:hidden pr-2.5"><RxHamburgerMenu /></span>
                 <img src={NavLogo} alt="" className="h-8 w-auto" />
 
-                <ul className="flex gap-5">
+                <ul className="flex gap-5 hidden md:visible">
                     <li className="text-[#DB2777]"><a href="">Home</a></li>
                     <li><a href="">Technologies</a></li>
                     <li><a href="">Projects</a></li>
