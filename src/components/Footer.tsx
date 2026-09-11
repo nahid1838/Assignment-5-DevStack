@@ -5,19 +5,19 @@ export default function Footer() {
         <>
         
         <hr  className="border-gray-100"/>
-        <div className="container mx-auto flex justify-between pt-20 pb-15">
+        <div className="container mx-auto flex md:flex-row flex-col md:justify-between pt-20 pb-15">
             <div className="flex flex-col gap-5">
-                <img src={FooterLogo} alt="" className="w-32 h-auto" />
-                <p className="text-[#64748B]">Curated tools, technologies, and resources for developers building<br />modern software.</p>
+                <img src={FooterLogo} alt="" className="h-auto w-32 mx-auto md:mx-0 " />
+                <p className="text-[#64748B] text-center md:text-left">Curated tools, technologies, and resources for developers building<br className="hidden md:block"/>modern software.</p>
 
-                <ul className="flex gap-4">
+                <ul className="flex gap-4 justify-center md:justify-normal">
                     <li><a href="">GitHub</a></li>
                     <li><a href="">Twitter</a></li>
                     <li><a href="">Linkedin</a></li>
                 </ul>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="md:flex flex-col gap-4 hidden">
                 <p className="font-semibold">PRODUCT</p>
                 <ul className="text-[#64748B]">
                     <li><a href="">Home</a></li>
@@ -26,7 +26,7 @@ export default function Footer() {
                 </ul>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="md:flex flex-col gap-4 hidden">
                 <p className="font-semibold">COMPANY</p>
                 <ul className="text-[#64748B]">
                     <li><a href="">About</a></li>
@@ -35,7 +35,7 @@ export default function Footer() {
                 </ul>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="md:flex flex-col gap-4 hidden">
                 <p className="font-semibold">LEGAL</p>
                 <ul className="text-[#64748B]">
                     <li><a href="">Privacy Policy</a></li>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         <hr className="border-gray-100" />
-        <div className="container mx-auto flex justify-between text-[#64748B] pt-8 mb-8">
+        <div className="container mx-auto flex justify-between text-[#64748B] pt-8 mb-8 text-[10px] md:text-md">
             <p>© 2026 Dev Stack. All rights reserved.</p>
             <ul className="flex gap-5">
                 <li><a href="">Privacy</a></li>
