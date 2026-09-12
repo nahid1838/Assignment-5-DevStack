@@ -1,32 +1,64 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Project Name : Assignment-5-DevStack
 
-Currently, two official plugins are available:
+Description : A modern React-based Dev Stack Builder that allows users to explore different technologies and create their own technology stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Technologies Used :
+                    - React
+                    - TypeScript
+                    - Tailwind CSS
+                    - React Toastify
+                    - React Icons
+                    - Vite
+                    - JSON
 
-## React Compiler
+3 Features : 
+            - Explore different web development technologies with detailed information.
+            - Add technologies to Your Stack and remove them one by noe and remove all.
+            - Show tost notification when adding, removing or clearing technologies.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the Oxlint configuration
+Answer to the Question No 1 : 
+JSX stands for JavaScript XML. It allows us to write HTML-like code inside JavaScript. React uses JSX because it makes UI code easier to read, write, and understand.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Answer to the Question No 2 : 
+Props are data passed from a parent component to a child component. Props are read-only.
+State is data managed inside a component. State can change when the user interacts with the application.
 
-```json
+Answer to the Question No 3 : 
+The useState hook is used to create and manage changing data inside a React component. In this project, I used useState to store the technologies selected by the user for the Your Stack section.
+
+Answer to the Question No 4 : 
+useEffect is a React hook used to perform side effects, such as fetching data or interacting with external systems.
+I did not use useEffect in this project. I loaded the local JSON data using a Promise and React's use() approach instead. So, useEffect was not necessary for loading the JSON data in my implementation.
+
+Answer to the Question No 5 : 
+React needs a unique key to identify each item in a list. It helps React understand which item was added, removed, or changed, so React can update the UI efficiently.
+
+Answer to the Question No 6 : 
+Conditional rendering means showing different UI elements depending on a condition. In my project I used many times 
 {
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+                addedTechonlogi.length === 0 ? 
+                <div>
+                    <p className="text-[#94A3B8] text-center border border-dashed border-gray-300 py-10 rounded-lg">Your stack is empty.</p>
+                </div> :
+                addedTechonlogi.map(techonlogi => <YourStackCard 
+                    key={techonlogi.id}
+                    techonlogi={techonlogi}
+                    addedTechonlogi={addedTechonlogi}
+                    setAddedTechonlogi={setAddedTechonlogi}
+                    ></YourStackCard>)
+            }
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Answer to the Question No 7 : 
+I did passed parent component to a child component using props.
+For example  <TechnologiCard 
+            techonlogi={techonlogi}
+            addedTechonlogi={addedTechonlogi}
+            setAddedTechonlogi={setAddedTechonlogi}
+            ></TechnologiCard>
+
+And the child can send something back to the parent by calling the function received through props.
+For example  <span onClick={()=>handleDeleteTechnlogi(techonlogi)}>
+                <RxCross2 />
+             </span >
