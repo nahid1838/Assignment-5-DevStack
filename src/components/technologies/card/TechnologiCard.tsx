@@ -41,7 +41,7 @@ export default function TechnologiCard({
     return (
         <>
         
-         <div className="flex flex-col h-full gap-5 border border-gray-300 p-5 rounded-xl">
+         <div className={`flex flex-col h-full gap-5 border p-5 rounded-xl ${isAddedInStack === true ? "border-red-500" : "border-gray-300"} hover:shadow-lg transition hover:translate-y-2`}>
             <div className="flex justify-between items-center">
                 <img src={techonlogi.icon} alt="" className="h-10 w-10" />
                 <p className="text-[#0EA5E9] font-semibold border border-gray-200 bg-[#ECFDF5] rounded-2xl px-2.5 py-1">{techonlogi.badge}</p>
@@ -57,7 +57,7 @@ export default function TechnologiCard({
             </div>
 
             <button onClick={()=> handleAddToStack()} 
-            className={`${isAddedInStack === true ? "bg-pink-100 text-red-500 cursor-not-allowed" : "bg-[#0A0F1D] text-white cursor-pointer"} font-semibold py-2 rounded-lg`}>{isAddedInStack === true ? "✓  Add To Stack" : "Add To Stack"}
+            className={`${isAddedInStack === true ? "bg-pink-100 text-red-500 cursor-not-allowed" : "bg-[#0A0F1D] text-white cursor-pointer"} font-semibold py-2 rounded-lg`}>{isAddedInStack === true ? "✓  Added To Stack" : "Add To Stack"}
             </button>
          </div>
         

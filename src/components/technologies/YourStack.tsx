@@ -16,6 +16,7 @@ export default function YourStack({
 
     const handleRemoveAll = () => {
         setAddedTechonlogi([]);
+
         toast.success("All Technlogies are deleted from Your Stack.", {
             position: "bottom-right",
             autoClose: 5000,
@@ -51,7 +52,7 @@ export default function YourStack({
                     ></YourStackCard>)
             }
 
-            <button onClick={handleRemoveAll} className="border border-pink-300 text-red-500 py-1.5 rounded-md cursor-pointer mt-8 font-semibold hover:bg-pink-100">Remove All</button>
+            <button onClick={handleRemoveAll} className={`${addedTechonlogi.length === 0 ? "hidden" : "block"} border border-pink-300 text-red-500 py-1.5 rounded-md cursor-pointer mt-8 font-semibold hover:bg-pink-100`}>Remove All</button>
         </div>
         
         </>

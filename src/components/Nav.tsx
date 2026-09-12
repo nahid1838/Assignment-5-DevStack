@@ -4,7 +4,7 @@ import NavLogo from "../assets/logo-text.png"
 export default function Nav() {
     return (
         <>
-        <div className="sticky top-0 z-0 bg-white">
+        <div className="sticky top-0 z-50 bg-[#FFFFFF]">
             <div className="container mx-auto flex justify-between items-center py-5">
                 <span className=" block md:hidden ml-4"><RxHamburgerMenu /></span>
                 <img src={NavLogo} alt="" className="h-8 w-auto" />

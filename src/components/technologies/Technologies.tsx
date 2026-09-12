@@ -15,7 +15,12 @@ export default function Technologies({ technologiesDataPromise }: TechnologiesPr
     
     return (
         <>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-5 pt-5 pb-15">
+        <div className="container mx-auto text-center md:text-left">
+            <h3 className="text-3xl md:text-4xl font-bold">Explore the <span className="bg-linear-to-l from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">Technologies</span></h3>
+            <p className="pt-3 pb-5">Pick one technology per category to build your ideal stack.</p>
+        </div>
+
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 pt-5 pb-15">
             <div className=" grid col-span-12 md:col-span-9">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {

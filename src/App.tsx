@@ -21,7 +21,7 @@ function App() {
 
       <Hero></Hero>
 
-      <Suspense fallback={<h3>Loading....</h3>}>
+      <Suspense fallback={<h3 className="container mx-auto text-2xl font-bold">Loading....</h3>}>
         <Technologies technologiesDataPromise={technologiesDataPromise()}></Technologies>
       </Suspense>
 

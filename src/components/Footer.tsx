@@ -2,10 +2,10 @@ import FooterLogo from "../assets/logo-text.png"
 
 export default function Footer() {
     return (
-        <>
+        < >
         
         <hr  className="border-gray-100"/>
-        <div className="container mx-auto flex md:flex-row flex-col md:justify-between pt-20 pb-15">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:justify-between pt-20 pb-15">
             <div className="flex flex-col gap-5">
                 <img src={FooterLogo} alt="" className="h-auto w-32 mx-auto md:mx-0 " />
                 <p className="text-[#64748B] text-center md:text-left">Curated tools, technologies, and resources for developers building<br className="hidden md:block"/>modern software.</p>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         <hr className="border-gray-100" />
-        <div className="container mx-auto flex justify-between text-[#64748B] pt-8 mb-8 text-[10px] md:text-md">
+        <div className="container mx-auto flex justify-between text-[#64748B] pt-8 mb-8 text-[10px] md:text-[15px]">
             <p>© 2026 Dev Stack. All rights reserved.</p>
             <ul className="flex gap-5">
                 <li><a href="">Privacy</a></li>
